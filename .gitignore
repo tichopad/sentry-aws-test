@@ -35,3 +35,6 @@ dist-ssr
 
 # Linter
 .eslintcache
+
+# Serverless Framework
+.serverless

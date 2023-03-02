@@ -1,4 +1,4 @@
 {
-  "extends": "@tpm/tsconfig/base",
+  "extends": "@sat/tsconfig/base",
   "include": ["src"]
 }

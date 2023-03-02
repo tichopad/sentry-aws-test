@@ -1,5 +1,5 @@
 {
-  "name": "@tpm/monorepo",
+  "name": "@sat/monorepo",
   "private": true,
   "version": "1.0.0",
   "comments": {
@@ -7,14 +7,15 @@
   },
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run build --filter=!@tpm/template --output-logs=errors-only",
-    "lint": "turbo run lint --filter=!@tpm/template --output-logs=errors-only",
-    "format": "turbo run format --filter=!@tpm/template --output-logs=errors-only"
+    "build": "turbo run build --filter=!@sat/template --output-logs=errors-only",
+    "lint": "turbo run lint --filter=!@sat/template --output-logs=errors-only",
+    "format": "turbo run format --filter=!@sat/template --output-logs=errors-only"
   },
   "devDependencies": {
     "esbuild": "0.17.10",
     "eslint": "8.35.0",
     "prettier": "2.8.4",
+    "serverless": "3.28.1",
     "turbo": "1.8.3",
     "typescript": "4.9.5"
   }

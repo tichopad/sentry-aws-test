@@ -19,7 +19,7 @@ module.exports = {
   overrides: [
     {
       files: '**/*.{ts,tsx}',
-      extends: '@tpm/eslint-config/typescript',
+      extends: '@sat/eslint-config/typescript',
     },
   ],
 }

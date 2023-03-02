@@ -1,5 +1,5 @@
 {
-  "name": "@tpm/eslint-config",
+  "name": "@sat/eslint-config",
   "private": true,
   "version": "1.0.0",
   "main": "./base.js",

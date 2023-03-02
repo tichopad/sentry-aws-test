@@ -1,6 +1,6 @@
 /** @type {import("eslint/lib/shared/types").ConfigData} */
 module.exports = {
-  extends: '@tpm/eslint-config/base',
+  extends: '@sat/eslint-config/base',
   overrides: [
     {
       files: '**/*.tsx',

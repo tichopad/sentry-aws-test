@@ -1,5 +1,5 @@
 {
-  "name": "@tpm/template",
+  "name": "@sat/template",
   "private": true,
   "version": "1.0.0",
   "description": "Serves as a template for workspace packages",
@@ -9,10 +9,10 @@
     "build": "tsc --noEmit"
   },
   "eslintConfig": {
-    "extends": "@tpm/eslint-config"
+    "extends": "@sat/eslint-config"
   },
   "devDependencies": {
-    "@tpm/eslint-config": "workspace:*",
-    "@tpm/tsconfig": "workspace:*"
+    "@sat/eslint-config": "workspace:*",
+    "@sat/tsconfig": "workspace:*"
   }
 }
