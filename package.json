@@ -2,14 +2,13 @@
   "name": "@sat/monorepo",
   "private": true,
   "version": "1.0.0",
-  "comments": {
-    "turbo-filter-template": "Exclude the template package from pipeline runs"
-  },
   "scripts": {
+    "build": "turbo run build",
+    "deploy": "turbo run deploy",
     "dev": "turbo run dev",
-    "build": "turbo run build --filter=!@sat/template --output-logs=errors-only",
-    "lint": "turbo run lint --filter=!@sat/template --output-logs=errors-only",
-    "format": "turbo run format --filter=!@sat/template --output-logs=errors-only"
+    "format": "turbo run format",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
     "esbuild": "0.17.10",

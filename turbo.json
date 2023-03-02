@@ -3,17 +3,29 @@
   "globalDependencies": [".env", ".prettierrc.js", "tsconfig.json"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"]
+      "env": ["STAGE"],
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".serverless/**"]
     },
-    "lint": {
-      "dependsOn": ["format"],
-      "outputs": []
-    },
-    "format": {
+    "deploy": {
+      "dependsOn": ["lint", "typecheck"],
       "outputs": []
     },
     "dev": {
       "cache": false
+    },
+    "format": {
+      "outputs": [],
+      "outputMode": "errors-only"
+    },
+    "lint": {
+      "dependsOn": ["format"],
+      "outputs": [],
+      "outputMode": "errors-only"
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "outputMode": "errors-only"
     }
   }
 }
