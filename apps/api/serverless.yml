@@ -1,13 +1,23 @@
 service: sat-api
 frameworkVersion: '3'
 
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
+custom:
+  esbuild:
+    packager: pnpm
+    bundle: true
+    minify: true
+
 provider:
   name: aws
   runtime: nodejs18.x
 
 functions:
   api:
-    handler: index.handler
+    handler: src/index.handler
     events:
       - httpApi:
           path: /
