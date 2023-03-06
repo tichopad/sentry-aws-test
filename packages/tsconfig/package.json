@@ -2,6 +2,9 @@
   "name": "@sat/tsconfig",
   "private": true,
   "version": "1.0.0",
+  "devDependencies": {
+    "@total-typescript/ts-reset": "0.3.7"
+  },
   "peerDependencies": {
     "typescript": "4.8.2"
   }
