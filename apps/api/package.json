@@ -1,11 +1,12 @@
 {
   "name": "@sat/api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "build": "sls package --stage dev",
     "deploy": "sls deploy --stage dev",
-    "dev": "sls offline start --reloadHandler",
+    "dev": "sls offline start --reloadHandler --stage dev",
+    "logs": "sls logs --function api --stage dev",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
