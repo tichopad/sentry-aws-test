@@ -25,6 +25,7 @@ importers:
   apps/api:
     specifiers:
       '@pothos/core': 3.27.1
+      '@sat/eslint-config': '*'
       '@sat/tsconfig': '*'
       '@sentry/serverless': 7.40.0
       '@types/aws-lambda': 8.10.111
@@ -36,6 +37,7 @@ importers:
       graphql: 16.6.0
       zod: 3.21.0
     devDependencies:
+      '@sat/eslint-config': link:../../packages/eslint-config
       '@sat/tsconfig': link:../../packages/tsconfig
       '@types/aws-lambda': 8.10.111
 

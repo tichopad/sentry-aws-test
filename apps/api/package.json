@@ -6,10 +6,16 @@
     "build": "sls package --stage dev",
     "deploy": "sls deploy --stage dev",
     "dev": "sls offline start --reloadHandler --stage dev",
-    "logs": "sls logs --function api --stage dev",
+    "format": "prettier --write --cache .",
+    "lint": "TIMING=1 eslint --fix --cache --ext ts src",
+    "logs": "sls logs --function graphql-endpoint --stage dev --tail",
     "typecheck": "tsc --noEmit"
   },
+  "eslintConfig": {
+    "extends": "@sat/eslint-config"
+  },
   "devDependencies": {
+    "@sat/eslint-config": "*",
     "@sat/tsconfig": "*",
     "@types/aws-lambda": "8.10.111"
   },

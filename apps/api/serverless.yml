@@ -1,5 +1,6 @@
 service: sat-api
 frameworkVersion: '3'
+useDotenv: true
 
 plugins:
   - serverless-esbuild
@@ -8,16 +9,18 @@ plugins:
 custom:
   esbuild:
     packager: pnpm
-    bundle: true
     minify: true
+    sourcemap: true
 
 provider:
   name: aws
   runtime: nodejs18.x
 
 functions:
-  api:
-    handler: src/index.handler
+  graphql-endpoint:
+    handler: src/index.default
+    environment:
+      SENTRY_DSN: ${env:SENTRY_DSN}
     events:
       - httpApi:
           path: /
