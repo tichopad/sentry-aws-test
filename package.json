@@ -3,14 +3,15 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "turbo run build",
-    "deploy": "turbo run deploy",
-    "dev": "turbo run dev",
-    "format": "turbo run format",
-    "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck"
+    "build": "dotenv turbo build",
+    "deploy": "dotenv turbo deploy",
+    "dev": "dotenv turbo dev",
+    "format": "turbo format",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
+    "dotenv-cli": "7.1.0",
     "esbuild": "0.16.17",
     "eslint": "8.35.0",
     "prettier": "2.8.4",

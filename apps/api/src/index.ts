@@ -1,12 +1,9 @@
 import * as Sentry from '@sentry/serverless'
 import type { APIGatewayProxyHandlerV2 } from 'aws-lambda'
-import * as dotenv from 'dotenv'
 import { graphql } from 'graphql'
 import { z } from 'zod'
 import configureSentry from './configure-sentry'
 import schema from './schema'
-
-dotenv.config({ path: '../../../.env' })
 
 const envSchema = z.object({
   SENTRY_DSN: z.string(),

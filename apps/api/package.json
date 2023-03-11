@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "build": "sls package --stage dev",
-    "deploy": "sls deploy --stage dev",
-    "dev": "sls offline start --reloadHandler --stage dev",
+    "build": "sls package",
+    "deploy": "START_SENTRY_RELEASE=true sls deploy",
+    "dev": "sls offline start --reloadHandler",
     "format": "prettier --write --cache .",
     "lint": "TIMING=1 eslint --fix --cache --ext ts src",
-    "logs": "sls logs --function graphql-endpoint --stage dev --tail",
+    "logs": "sls logs --tail --function graphql-endpoint",
     "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
@@ -22,10 +22,7 @@
   },
   "dependencies": {
     "@pothos/core": "3.27.1",
-    "@sentry/integrations": "7.42.0",
     "@sentry/serverless": "7.40.0",
-    "dotenv": "16.0.3",
-    "dotenv-expand": "10.0.0",
     "graphql": "16.6.0",
     "zod": "3.21.0"
   }
