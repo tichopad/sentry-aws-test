@@ -23,6 +23,7 @@ functions:
     handler: src/index.default
     environment:
       SENTRY_DSN: ${env:SENTRY_DSN}
+      SENTRY_ENVIRONMENT: ${sls:stage}
     events:
       - httpApi:
           path: /
