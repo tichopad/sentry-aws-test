@@ -23,9 +23,6 @@ const eventBodySchema = z.object({
 
 const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
   const rawEventBody = JSON.parse(event.body ?? '')
-
-  Sentry.captureException(`Chaos!`)
-
   const eventBody = eventBodySchema.parse(rawEventBody)
   const result = await graphql({
     schema,
