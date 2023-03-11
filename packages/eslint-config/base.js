@@ -9,10 +9,13 @@ module.exports = {
   ignorePatterns: ['**/dist', '**/build'],
   rules: {
     'import/extensions': 'off',
-    'import/no-extraneous-dependencies': [
+    'import/no-extraneous-dependencies': 'off',
+    'no-unused-vars': [
       'error',
       {
-        devDependencies: ['**/*.test.js', '**/vite.config.ts'],
+        args: 'none',
+        ignoreRestSiblings: false,
+        vars: 'all',
       },
     ],
   },

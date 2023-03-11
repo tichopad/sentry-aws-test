@@ -17,11 +17,15 @@
   "devDependencies": {
     "@sat/eslint-config": "*",
     "@sat/tsconfig": "*",
+    "@sentry/esbuild-plugin": "0.4.0",
     "@types/aws-lambda": "8.10.111"
   },
   "dependencies": {
     "@pothos/core": "3.27.1",
+    "@sentry/integrations": "7.42.0",
     "@sentry/serverless": "7.40.0",
+    "dotenv": "16.0.3",
+    "dotenv-expand": "10.0.0",
     "graphql": "16.6.0",
     "zod": "3.21.0"
   }

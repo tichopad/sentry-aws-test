@@ -11,6 +11,9 @@ custom:
     packager: pnpm
     minify: true
     sourcemap: true
+    keepNames: true
+    keepOutputDirectory: true
+    plugins: ./esbuild.plugins.js
 
 provider:
   name: aws
