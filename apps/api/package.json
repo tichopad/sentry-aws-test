@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "@pothos/core": "3.27.1",
+    "@pothos/plugin-tracing": "0.5.7",
+    "@pothos/tracing-sentry": "0.7.8",
     "@sentry/serverless": "7.40.0",
     "graphql": "16.6.0",
     "zod": "3.21.0"

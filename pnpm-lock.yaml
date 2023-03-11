@@ -27,6 +27,8 @@ importers:
   apps/api:
     specifiers:
       '@pothos/core': 3.27.1
+      '@pothos/plugin-tracing': 0.5.7
+      '@pothos/tracing-sentry': 0.7.8
       '@sat/eslint-config': '*'
       '@sat/tsconfig': '*'
       '@sentry/esbuild-plugin': 0.4.0
@@ -36,6 +38,8 @@ importers:
       zod: 3.21.0
     dependencies:
       '@pothos/core': 3.27.1_graphql@16.6.0
+      '@pothos/plugin-tracing': 0.5.7_7fudwdnucmacspsozzhr4rb5cm
+      '@pothos/tracing-sentry': 0.7.8_4zx6ds6fkluw6kqhinktr3zooe
       '@sentry/serverless': 7.40.0
       graphql: 16.6.0
       zod: 3.21.0
@@ -1337,6 +1341,30 @@ packages:
     peerDependencies:
       graphql: '>=15.1.0'
     dependencies:
+      graphql: 16.6.0
+    dev: false
+
+  /@pothos/plugin-tracing/0.5.7_7fudwdnucmacspsozzhr4rb5cm:
+    resolution: {integrity: sha512-Sy8yvdFQIn+ffm7C/uYlc2r7xiqbWIFo56Eo7h+JwjBsT2RLvV6dfKUAE0vi4tvAN2Tri1poEneLLsYRPV9SdQ==}
+    peerDependencies:
+      '@pothos/core': '*'
+      graphql: '>=15.1.0'
+    dependencies:
+      '@pothos/core': 3.27.1_graphql@16.6.0
+      graphql: 16.6.0
+    dev: false
+
+  /@pothos/tracing-sentry/0.7.8_4zx6ds6fkluw6kqhinktr3zooe:
+    resolution: {integrity: sha512-wq+9JZW9pfLZAhmDBN1Mvj8yMw7QETwP0FU2ja5mNJKDMsOPIboK1aKBM/eg9663bLSBCrK6UBJ5hi1aZXQc3g==}
+    peerDependencies:
+      '@pothos/core': '*'
+      '@pothos/plugin-tracing': '*'
+      '@sentry/node': '*'
+      '@sentry/tracing': '*'
+      graphql: '>=15.1.0'
+    dependencies:
+      '@pothos/core': 3.27.1_graphql@16.6.0
+      '@pothos/plugin-tracing': 0.5.7_7fudwdnucmacspsozzhr4rb5cm
       graphql: 16.6.0
     dev: false
 
