@@ -16,6 +16,7 @@ const eventBodySchema = z.object({
   name: z.string(),
 })
 
+// eslint-disable-next-line @typescript-eslint/require-await
 const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
   const rawEventBody = JSON.parse(event.body ?? '')
   const eventBody = eventBodySchema.parse(rawEventBody)

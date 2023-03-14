@@ -16,6 +16,7 @@ module.exports = (serverless) => [
     urlPrefix: '/var/task/',
     dryRun: !process.env.START_SENTRY_RELEASE,
     silent: !process.env.START_SENTRY_RELEASE,
+    dist: serverless.service.getServiceName(),
     deploy: {
       env: serverless.service.provider.stage,
     },
