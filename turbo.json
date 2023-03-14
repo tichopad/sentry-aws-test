@@ -8,8 +8,8 @@
       "outputs": ["dist/**", ".serverless/**"]
     },
     "deploy": {
-      "dependsOn": ["lint", "typecheck"],
-      "outputs": []
+      "cache": false,
+      "dependsOn": ["lint", "typecheck"]
     },
     "dev": {
       "cache": false
