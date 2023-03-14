@@ -2,6 +2,12 @@ import SchemaBuilder from '@pothos/core'
 import TracingPlugin, { isRootField } from '@pothos/plugin-tracing'
 import { createSentryWrapper } from '@pothos/tracing-sentry'
 
+function delay(ms: number) {
+  return new Promise<void>((ok) => {
+    setTimeout(() => ok(), ms)
+  })
+}
+
 const traceResolver = createSentryWrapper({
   includeArgs: true,
   includeSource: true,
@@ -18,7 +24,10 @@ export const builder = new SchemaBuilder({
 builder.queryType({
   fields: (t) => ({
     hello: t.string({
-      resolve: () => 'world!',
+      resolve: async () => {
+        await delay(Math.random() * 2000)
+        return 'world!'
+      },
     }),
     bye: t.string({
       args: {
