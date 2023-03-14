@@ -7,11 +7,12 @@ import schema from './schema'
 
 const envSchema = z.object({
   SENTRY_DSN: z.string(),
+  SERVICE_NAME: z.string(),
 })
 
 const env = envSchema.parse(process.env)
 
-configureSentry(env.SENTRY_DSN)
+configureSentry(env.SENTRY_DSN, env.SERVICE_NAME)
 
 const eventBodySchema = z.object({
   query: z.string(),

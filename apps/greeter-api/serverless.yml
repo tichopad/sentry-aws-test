@@ -1,4 +1,4 @@
-service: sat-api
+service: sat-rest-api
 frameworkVersion: '3'
 
 plugins:
@@ -19,11 +19,12 @@ provider:
   runtime: nodejs18.x
 
 functions:
-  graphql-endpoint:
+  greeter-endpoint:
     handler: src/index.default
     environment:
       SENTRY_DSN: ${env:SENTRY_DSN}
       SENTRY_ENVIRONMENT: ${sls:stage}
+      SERVICE_NAME: ${self:service}
     events:
       - httpApi:
           path: /

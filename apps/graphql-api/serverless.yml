@@ -1,0 +1,31 @@
+service: sat-graphql-api
+frameworkVersion: '3'
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
+custom:
+  esbuild:
+    packager: pnpm
+    minify: true
+    sourcemap: true
+    keepNames: true
+    keepOutputDirectory: true
+    plugins: ./esbuild.plugins.js
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  graphql-endpoint:
+    handler: src/index.default
+    environment:
+      SENTRY_DSN: ${env:SENTRY_DSN}
+      SENTRY_ENVIRONMENT: ${sls:stage}
+      SERVICE_NAME: ${self:service}
+    events:
+      - httpApi:
+          path: /
+          method: post

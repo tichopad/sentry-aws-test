@@ -1,5 +1,5 @@
 {
-  "name": "@sat/api",
+  "name": "@sat/graphql-api",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {

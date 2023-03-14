@@ -1,0 +1,4 @@
+{
+  "extends": "@sat/tsconfig/node",
+  "include": ["src"]
+}

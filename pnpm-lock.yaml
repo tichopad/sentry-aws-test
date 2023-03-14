@@ -24,7 +24,7 @@ importers:
       turbo: 1.8.3
       typescript: 4.9.5
 
-  apps/api:
+  apps/graphql-api:
     specifiers:
       '@pothos/core': 3.27.1
       '@pothos/plugin-tracing': 0.5.7
@@ -42,6 +42,23 @@ importers:
       '@pothos/tracing-sentry': 0.7.8_4zx6ds6fkluw6kqhinktr3zooe
       '@sentry/serverless': 7.40.0
       graphql: 16.6.0
+      zod: 3.21.0
+    devDependencies:
+      '@sat/eslint-config': link:../../packages/eslint-config
+      '@sat/tsconfig': link:../../packages/tsconfig
+      '@sentry/esbuild-plugin': 0.4.0
+      '@types/aws-lambda': 8.10.111
+
+  apps/greeter-api:
+    specifiers:
+      '@sat/eslint-config': '*'
+      '@sat/tsconfig': '*'
+      '@sentry/esbuild-plugin': 0.4.0
+      '@sentry/serverless': 7.40.0
+      '@types/aws-lambda': 8.10.111
+      zod: 3.21.0
+    dependencies:
+      '@sentry/serverless': 7.40.0
       zod: 3.21.0
     devDependencies:
       '@sat/eslint-config': link:../../packages/eslint-config
