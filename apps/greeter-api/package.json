@@ -15,6 +15,7 @@
     "extends": "@sat/eslint-config"
   },
   "devDependencies": {
+    "@sat/serverless-esbuild-config": "*",
     "@sat/eslint-config": "*",
     "@sat/tsconfig": "*",
     "@sentry/esbuild-plugin": "0.4.0",

@@ -7,12 +7,7 @@ plugins:
 
 custom:
   esbuild:
-    packager: pnpm
-    minify: true
-    sourcemap: true
-    keepNames: true
-    keepOutputDirectory: true
-    plugins: ./esbuild.plugins.js
+    config: node_modules/@sat/serverless-esbuild-config/config.js
 
 provider:
   name: aws
@@ -24,7 +19,6 @@ functions:
     environment:
       SENTRY_DSN: ${env:SENTRY_DSN}
       SENTRY_ENVIRONMENT: ${sls:stage}
-      SERVICE_NAME: ${self:service}
     events:
       - httpApi:
           path: /

@@ -1,0 +1,25 @@
+{
+  "name": "@sat/serverless-esbuild-config",
+  "private": true,
+  "version": "1.0.0",
+  "exports": {
+    ".": "./config.js",
+    "./config.js": "./config.js"
+  },
+  "description": "Common configuration for serverless-esbuild plugin",
+  "scripts": {
+    "format": "prettier --write --cache .",
+    "lint": "TIMING=1 eslint --fix --cache --ext js .",
+    "typecheck": "tsc --noEmit"
+  },
+  "eslintConfig": {
+    "extends": "@sat/eslint-config"
+  },
+  "devDependencies": {
+    "@sat/eslint-config": "workspace:*",
+    "@sat/tsconfig": "workspace:*"
+  },
+  "dependencies": {
+    "@sentry/esbuild-plugin": "0.4.0"
+  }
+}
