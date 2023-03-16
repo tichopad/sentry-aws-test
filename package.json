@@ -2,6 +2,7 @@
   "name": "@sat/monorepo",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@7.27.1",
   "scripts": {
     "build": "dotenv turbo build",
     "deploy": "dotenv turbo deploy",
