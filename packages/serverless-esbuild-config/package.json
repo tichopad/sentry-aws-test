@@ -10,8 +10,7 @@
   "description": "Common configuration for serverless-esbuild plugin",
   "scripts": {
     "format": "prettier --write --cache .",
-    "lint": "TIMING=1 eslint --fix --cache --ext js .",
-    "typecheck": "tsc --noEmit"
+    "lint": "TIMING=1 eslint --fix --cache --ext js ."
   },
   "eslintConfig": {
     "extends": "@sat/eslint-config"
