@@ -30,7 +30,7 @@ jobs:
         cache: 'pnpm'
 
     - name: Setup PNPM
-      uses: pnpm/action-setup@v3
+      uses: pnpm/action-setup@v2
 
     - name: Install Dependencies
       run: pnpm install
