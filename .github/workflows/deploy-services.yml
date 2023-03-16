@@ -1,5 +1,5 @@
 name: Deploy Services
-run-name: Services' deploy to dev by {{ github.actor }}
+run-name: Services' deploy to dev by ${{ github.actor }}
 
 on:
   push:
