@@ -47,6 +47,6 @@ jobs:
       run: pnpm typecheck
 
     - name: Deploy
-      run: pnpm -F ${{ matrix.service-name }} run serverless deploy --stage dev
+      run: pnpm -F ${{ matrix.service-name }} run deploy --stage dev
       env:
         SENTRY_DSN: ${{ fromJSON(vars.SERVICES_SENTRY_DSN_VALUES)[matrix.service-name] }}
