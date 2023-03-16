@@ -2,6 +2,7 @@
   "name": "@sat/tsconfig",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@7.27.1",
   "devDependencies": {
     "@total-typescript/ts-reset": "0.3.7"
   },

@@ -2,6 +2,7 @@
   "name": "@sat/template",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@7.27.1",
   "description": "Serves as a template for workspace packages",
   "scripts": {
     "format": "prettier --write --cache .",

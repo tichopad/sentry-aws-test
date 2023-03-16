@@ -2,6 +2,7 @@
   "name": "@sat/eslint-config",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@7.27.1",
   "main": "./base.js",
   "exports": {
     ".": "./base.js",

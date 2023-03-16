@@ -1,6 +1,7 @@
 {
   "name": "@sat/graphql-api",
   "version": "1.0.0",
+  "packageManager": "pnpm@7.27.1",
   "main": "index.ts",
   "scripts": {
     "build": "sls package",

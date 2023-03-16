@@ -2,6 +2,7 @@
   "name": "@sat/serverless-esbuild-config",
   "private": true,
   "version": "1.0.0",
+  "packageManager": "pnpm@7.27.1",
   "exports": {
     ".": "./config.js",
     "./config.js": "./config.js"
