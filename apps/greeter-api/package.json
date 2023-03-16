@@ -10,7 +10,8 @@
     "format": "prettier --write --cache .",
     "lint": "TIMING=1 eslint --fix --cache --ext ts src",
     "logs": "sls logs --tail --function greeter-endpoint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "faux-deploy": "echo $SENTRY_DSN"
   },
   "eslintConfig": {
     "extends": "@sat/eslint-config"
