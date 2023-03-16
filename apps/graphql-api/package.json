@@ -10,8 +10,7 @@
     "format": "prettier --write --cache .",
     "lint": "TIMING=1 eslint --fix --cache --ext ts src",
     "logs": "sls logs --tail --function graphql-endpoint",
-    "typecheck": "tsc --noEmit",
-    "faux-deploy": "echo $SENTRY_DSN"
+    "typecheck": "tsc --noEmit"
   },
   "eslintConfig": {
     "extends": "@sat/eslint-config"

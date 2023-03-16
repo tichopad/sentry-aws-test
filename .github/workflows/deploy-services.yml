@@ -21,23 +21,29 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '18.x'
+        node-version: '18'
+        cache: 'pnpm'
 
     - name: Setup PNPM
-      uses: pnpm/action-setup@v2
+      uses: pnpm/action-setup@v3
 
     - name: Install Dependencies
       run: pnpm install
 
-    - name: Cache turborepo cache
-      uses: actions/cache@v2
+    - name: Cache Turborepo, Prettier and ESLint artifacts
+      uses: actions/cache@v3
       with:
-        path: ./node_modules/.cache/turbo
+        path: |
+          ./node_modules/.cache
+          ./packages/*/node_modules/.cache
+          ./packages/*/.eslintcache
+          ./apps/*/node_modules/.cache
+          ./apps/*/.eslintcache
         key: ${{ runner.os }}-turborepo-${{ hashFiles('pnpm-lock.yaml') }}
 
     - name: Lint
@@ -47,6 +53,6 @@ jobs:
       run: pnpm typecheck
 
     - name: Deploy
-      run: pnpm -F ${{ matrix.service-name }} run faux-deploy
+      run: pnpm -F ${{ matrix.service-name }} run build
       env:
         SENTRY_DSN: ${{ fromJSON(vars.SERVICES_SENTRY_DSN_VALUES)[matrix.service-name] }}
