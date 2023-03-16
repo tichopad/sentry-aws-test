@@ -19,7 +19,7 @@ const eventBodySchema = z.object({
 const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
   const rawEventBody = JSON.parse(event.body ?? '')
   const eventBody = eventBodySchema.parse(rawEventBody)
-  const result = `Hello, ${eventBody.name}!`
+  const result = `Hey, ${eventBody.name}!`
 
   return {
     statusCode: 200,
