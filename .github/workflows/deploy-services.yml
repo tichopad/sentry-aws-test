@@ -1,0 +1,49 @@
+name: Deploy Services
+run-name: Services' deploy to dev by {{ github.actor }}
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  CI: true
+  NODE_ENV: dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: dev
+
+    strategy:
+      matrix:
+        service-name: ["graphql-api", "greeter-api"]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18.x'
+
+    - name: Install Dependencies
+      run: pnpm install
+
+    - name: Cache turborepo cache
+      uses: actions/cache@v2
+      with:
+        path: ./node_modules/.cache/turbo
+        key: ${{ runner.os }}-turborepo-${{ hashFiles('pnpm-lock.yaml') }}
+
+    - name: Lint
+      run: pnpm lint
+
+    - name: Typecheck
+      run: pnpm typecheck
+
+    - name: Deploy
+      run: pnpm -F ${{ matrix.service-name }} run serverless deploy --stage dev
+      env:
+        SENTRY_DSN: ${{ fromJSON(vars.SERVICES_SENTRY_DSN_VALUES)[matrix.service-name] }}
