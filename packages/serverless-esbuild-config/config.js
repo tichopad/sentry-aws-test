@@ -36,7 +36,6 @@ const { sentryEsbuildPlugin } = require('@sentry/esbuild-plugin')
  */
 module.exports = function serverlessEsbuildConfig(serverless) {
   const isReleaseCreated = Boolean(process.env.START_SENTRY_RELEASE)
-  console.log({ isReleaseCreated })
   return {
     // serverless-esbuild options
     exclude: ['aws-sdk'],
@@ -50,8 +49,7 @@ module.exports = function serverlessEsbuildConfig(serverless) {
     plugins: [
       sentryEsbuildPlugin({
         project: serverless.service.getServiceName(),
-        authToken:
-          '818c9854517641d9b2d511b0ea7e2aa4c7b70c03e15743b7b6a942abe14fb6ea',
+        authToken: process.env.SENTRY_AUTH_TOKEN,
         include: './.esbuild/.build',
         urlPrefix: '/var/task/',
         dryRun: isReleaseCreated === false,

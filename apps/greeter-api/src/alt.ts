@@ -5,9 +5,15 @@ import configureSentry from './configure-sentry'
 configureSentry()
 
 // eslint-disable-next-line @typescript-eslint/require-await
-const handler: APIGatewayProxyHandlerV2 = async (event, context) => ({
-  statusCode: 200,
-  body: JSON.stringify({ message: 'Hello!' }),
-})
+const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
+  if (Math.random() > 0.5) {
+    throw new Error(`A chaotic exception happened inside the handler.`)
+  }
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Hello!' }),
+  }
+}
 
 export default Sentry.AWSLambda.wrapHandler(handler)
