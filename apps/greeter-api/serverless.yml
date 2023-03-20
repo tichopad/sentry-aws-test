@@ -13,7 +13,7 @@ provider:
   name: aws
   runtime: nodejs18.x
   environment:
-    SENTRY_DSN: ${env:SENTRY_DSN_GREETER_API}
+    SENTRY_DSN: ${env:SENTRY_DSN_GREETER_API, env:SENTRY_DSN}
     SENTRY_ENVIRONMENT: ${sls:stage}
 
 functions:
