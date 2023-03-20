@@ -5,13 +5,7 @@ import { z } from 'zod'
 import configureSentry from './configure-sentry'
 import schema from './schema'
 
-const envSchema = z.object({
-  SENTRY_DSN: z.string(),
-})
-
-const env = envSchema.parse(process.env)
-
-configureSentry(env.SENTRY_DSN)
+configureSentry()
 
 const eventBodySchema = z.object({
   query: z.string(),

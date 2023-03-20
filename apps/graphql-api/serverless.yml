@@ -1,4 +1,4 @@
-service: sat-graphql-api
+service: graphql-api
 frameworkVersion: '3'
 
 plugins:
@@ -17,7 +17,8 @@ functions:
   graphql-endpoint:
     handler: src/index.default
     environment:
-      SENTRY_DSN: ${env:SENTRY_DSN}
+      FUNCTION_NAME: graphql-endpoint
+      SENTRY_DSN: https://8a9c081ca06447d18a5331ac7dff82f7@o4504794176684032.ingest.sentry.io/4504843192762368
       SENTRY_ENVIRONMENT: ${sls:stage}
     events:
       - httpApi:

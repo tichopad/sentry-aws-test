@@ -1,4 +1,4 @@
-service: sat-rest-api
+service: greeter-api
 frameworkVersion: '3'
 
 plugins:
@@ -17,10 +17,20 @@ functions:
   greeter-endpoint:
     handler: src/index.default
     environment:
-      SENTRY_DSN: ${env:SENTRY_DSN}
+      FUNCTION_NAME: greeter-endpoint
+      SENTRY_DSN: https://ecaf5342d1bc46f8ad10fe858425362a@o4504794176684032.ingest.sentry.io/4504843192762369
       SENTRY_ENVIRONMENT: ${sls:stage}
-      SERVICE_NAME: ${self:service}
     events:
       - httpApi:
           path: /
           method: post
+  alternative-endpoint:
+    handler: src/alt.default
+    environment:
+      FUNCTION_NAME: alternative-endpoint
+      SENTRY_DSN: https://ecaf5342d1bc46f8ad10fe858425362a@o4504794176684032.ingest.sentry.io/4504843192762369
+      SENTRY_ENVIRONMENT: ${sls:stage}
+    events:
+      - httpApi:
+          path: /
+          method: get

@@ -3,13 +3,7 @@ import type { APIGatewayProxyHandlerV2 } from 'aws-lambda'
 import { z } from 'zod'
 import configureSentry from './configure-sentry'
 
-const envSchema = z.object({
-  SENTRY_DSN: z.string(),
-})
-
-const env = envSchema.parse(process.env)
-
-configureSentry(env.SENTRY_DSN)
+configureSentry()
 
 const eventBodySchema = z.object({
   name: z.string(),
