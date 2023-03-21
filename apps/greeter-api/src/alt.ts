@@ -12,7 +12,7 @@ const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: 'Hello!' }),
+    body: JSON.stringify({ message: 'Hola!' }),
   }
 }
 
